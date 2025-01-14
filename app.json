@@ -1,0 +1,48 @@
+{
+    "name": "UD-MD",
+    "description": "UD MD WHATSAPP BOT BY UMAR REHMAN",
+    "repository": "https://github.com/Um4r719/UD-MD",
+    "logo": "https://avatars.githubusercontent.com/u/170228090?v=4&size=200",
+    "keywords": [
+        "nodejs",
+        "Bot",
+        "WhatsApp Bot",
+        "WhatsApp Automation",
+        "Multi Device"
+    ],
+    "env": {
+        "SESSION_ID": {
+            "description": "Type the Session-ID you got from scaning QR",
+            "required": false,
+            "value": ""
+        },
+        "DATABASE_URL": {
+            "description": "Enter a PostgresSQL Database's External Url",
+            "required": true,
+            "value": ""
+        },
+  
+        "WORK_TYPE": {
+            "description": "Add the worktype of the Bot ( private ,public , onlygroup )",
+            "required": true,
+            "value": "private"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        },
+        {
+            "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
